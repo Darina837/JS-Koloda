@@ -3,7 +3,7 @@ function sampleFunc () {
 }
 
 function modificator ( func ) {
-	return () => func ( "test", "sample" )
+ return func.bind (null, "test", "sample")
 }
 
 testFunc = modificator( sampleFunc )
