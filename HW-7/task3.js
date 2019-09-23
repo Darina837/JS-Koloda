@@ -26,7 +26,7 @@ for (var tag of collection) {
 	}
 	elem.onclick = function clickHandler (event) {
 		event.stopPropagation()
-		event.target.remove(event.target)
+		event.target.firstChild === null ? event.target.remove() : event.target.parentNode.appendChild(event.target.parentNode.removeChild(event.target).firstChild)
 	}
 	container = elem  
 }
